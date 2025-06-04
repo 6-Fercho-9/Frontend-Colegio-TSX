@@ -34,6 +34,8 @@ const PeriodosTable = ({ reloadTrigger, onDeleted }: PeriodosTableProps) => {
     try {
       const data = await getListPeriodos();
       setPeriodoss(data);
+
+
     } catch (error) {
       console.error("Error al obtener Periodoss paginadas", error);
     }
@@ -79,6 +81,7 @@ const PeriodosTable = ({ reloadTrigger, onDeleted }: PeriodosTableProps) => {
   const handleDelete = async () => {
     if (!selectedPeriodos) return;
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const data = await deletePeriodos(selectedPeriodos.id);
       // Swal.fire("Periodos eliminada", data.message, "success");
       setShowDeleteModal(false);

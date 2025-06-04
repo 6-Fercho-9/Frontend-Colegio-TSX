@@ -4,7 +4,7 @@ import { Periodo } from "../interfaces/Periodo";
 
 
 
-export const getListPeriodos = async (): Promise<Periodo> => {
+export const getListPeriodos = async (): Promise<Periodo[]> => {
     const response = await fetch(`${API_URL}/periodos/get`, {
         method: "GET",
         headers: {
