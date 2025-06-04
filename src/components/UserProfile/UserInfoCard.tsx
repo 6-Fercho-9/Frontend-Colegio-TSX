@@ -25,6 +25,7 @@ export default function UserInfoCard() {
     username: "",
     email: "",
     rol_id: 0, // en vez de ""
+    ci: ""
   });
 
   const [roles, setRoles] = useState<Rol[]>([]);
@@ -48,6 +49,7 @@ export default function UserInfoCard() {
         username: user.username || "",
         email: user.email || "",
         rol_id: user.rol_id || 0,
+        ci: user.ci || ""
       });
     }
   }, [user, isOpen]);
