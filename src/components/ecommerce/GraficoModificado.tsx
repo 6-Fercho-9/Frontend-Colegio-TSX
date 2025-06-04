@@ -2,7 +2,7 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 // import { useState } from "react";
 
-export default function MonthlyTarget({series,curso} : {series:Float32Array, curso:string}) {
+export default function MonthlyTarget({series,curso} : {series:Float32Array, curso:string | undefined}) {
   // const series = [75.55];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   
