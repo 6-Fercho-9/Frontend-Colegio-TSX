@@ -33,7 +33,7 @@ const DocenteTable = ({ reloadTrigger, onDeleted }: DocenteTableProps) => {
   const fetchDocentes = async () => {
     try {
       const data = await getDocentes();
-      setDocentes(data);
+      setDocentes(Array.isArray(data) ? data : [data]);
     } catch (error) {
       console.error("Error al obtener Categorias paginadas", error);
     }
@@ -80,6 +80,7 @@ const DocenteTable = ({ reloadTrigger, onDeleted }: DocenteTableProps) => {
   const handleDelete = async () => {
     if (!selectedDocente) return;
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const data = await deleteDocente(selectedDocente.id);
       // Swal.fire("Categoria eliminada", data.message, "success");
       setShowDeleteModal(false);

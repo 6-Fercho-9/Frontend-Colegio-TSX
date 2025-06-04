@@ -72,7 +72,7 @@ export default function MonthlyTarget({series,curso} : {series:Float32Array, cur
           <div className="max-h-[330px]" id="chartDarkStyle">
             <Chart
               options={options}
-              series= {[series]}
+              series={Array.from(series)}
               type="radialBar"
               height={330}
             />

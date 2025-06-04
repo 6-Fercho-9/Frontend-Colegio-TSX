@@ -6,13 +6,13 @@ import {
   TableHeader,
   TableRow,
 } from "../../../components/ui/table";
-import { PencilSquareIcon, TrashIcon, EyeIcon } from "@heroicons/react/24/solid";
+import { PencilSquareIcon, TrashIcon} from "@heroicons/react/24/solid";
 import { Modal } from "../../../components/ui/modal";
 import Swal from "sweetalert2";
 import Button from "../../../components/ui/button/Button";
 import Input from "../../../components/form/input/InputField";
 import Label from "../../../components/form/Label";
-import { getListPeriodos, updatePeriodos, deletePeriodos } from "../../../services/Personal-Academico/PeriodoService";
+import { getListPeriodos,deletePeriodos } from "../../../services/Personal-Academico/PeriodoService";
 import { useHasRole } from "../../hooks/useRol";
 import SelectModified from "../../shared/SelectModified";
 import { Periodo } from "../../../services/interfaces/Periodo";

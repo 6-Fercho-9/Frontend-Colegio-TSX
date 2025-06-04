@@ -30,6 +30,7 @@ export default function CursoInscripcionPage() {
     fecha_fin: ""
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [formCopia, setFormCopia] = useState({
     cantidad_total_cupos: "0",
     cantidad_total_inscritos: "0",
@@ -116,7 +117,7 @@ export default function CursoInscripcionPage() {
           </div>
         </ComponentCardModified>
         <div>
-          <GraficoModificado series={porcentajeRedondeado} curso={cursoGestion?.curso.nombre} ></GraficoModificado>
+          <GraficoModificado series={new Float32Array([porcentajeRedondeado])} curso={cursoGestion?.curso.nombre} ></GraficoModificado>
         </div>
       </div>
 

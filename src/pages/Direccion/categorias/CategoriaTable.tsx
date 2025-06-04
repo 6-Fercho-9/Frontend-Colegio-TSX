@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 import Button from "../../../components/ui/button/Button";
 import Input from "../../../components/form/input/InputField";
 import Label from "../../../components/form/Label";
-import { getListCategoria, updateCategoria, deleteCategoria } from "../../../services/Personal-Academico/CategoriaService";
+import { getListCategoria} from "../../../services/Personal-Academico/CategoriaService";
 import { useHasRole } from "../../hooks/useRol";
 import SelectModified from "../../shared/SelectModified";
 import { categoria } from "../../../services/interfaces/CategoriaMateria";
@@ -35,7 +35,7 @@ const CategoriaTable = ({ reloadTrigger, onDeleted }: CategoriaTableProps) => {
   const fetchCategorias = async () => {
     try {
       const data = await getListCategoria();
-      setCategorias(data);
+      setCategorias(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error("Error al obtener Categorias paginadas", error);
     }
@@ -88,7 +88,8 @@ const CategoriaTable = ({ reloadTrigger, onDeleted }: CategoriaTableProps) => {
   const handleDelete = async () => {
     if (!selectedCategoria) return;
     try {
-      const data = await deleteCategoria(selectedCategoria.id);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+     // const data = await deleteCategoria(selectedCategoria.id);
       // Swal.fire("Categoria eliminada", data.message, "success");
       setShowDeleteModal(false);
       fetchCategorias();

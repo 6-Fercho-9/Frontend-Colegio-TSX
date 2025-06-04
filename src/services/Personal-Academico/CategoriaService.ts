@@ -1,5 +1,5 @@
 import { API_URL, getStoredToken, handleErrorResponse } from "../authService";
-import { categoria, materia } from "../interfaces/CategoriaMateria";
+import { categoria } from "../interfaces/CategoriaMateria";
 
 export const getListCategoria = async (): Promise<categoria> => {
     const response = await fetch(`${API_URL}/categorias/get`, {
@@ -12,10 +12,19 @@ export const getListCategoria = async (): Promise<categoria> => {
 		return await handleErrorResponse(response);
 };
 
-export const updateCategoria = async (): Promise<categoria> => {
-	return null;
-}
+// export const updateCategoria = async (id: number, data: Partial<categoria>): Promise<categoria> => {
+//     // const response = await fetch(`${API_URL}/categorias/update/${id}`, {
+//     //     method: "PUT",
+//     //     headers: {
+//     //         "Content-Type": "application/json",
+//     //         Authorization: `Bearer ${getStoredToken()}`,
+//     //     },
+//     //     body: JSON.stringify(data),
+//     // });
+//     // return await handleErrorResponse(response);
+//     return null;
+// }
 
-export const deleteCategoria = async (id: number): Promise<void> => {
-	return null;
-}
+// export const deleteCategoria = async (id: number): Promise<void> => {
+// 	return null;
+// }

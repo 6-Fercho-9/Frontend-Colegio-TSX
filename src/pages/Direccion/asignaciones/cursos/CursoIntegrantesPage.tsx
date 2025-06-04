@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { CursoGestionEdit } from "../../../../services/interfaces/Personal-Escolar/CursoGestion";
-import { get_curso_gestion_data, updateCursoGestion, uploadIconCurso, UploadIconoDTO } from "../../../../services/Personal-Academico/CursoGestionService";
+import { get_curso_gestion_data } from "../../../../services/Personal-Academico/CursoGestionService";
 import PageMetaModified from "../../../shared/PageMetaModified";
 import PageBreadcrumbModified from "../../../shared/PageBreadcrumbModified";
 import NavigationTabs from "../../../shared/NavegationBar";
@@ -48,7 +48,7 @@ export default function CursoIntegrantesPage() {
           <div className="space-y-6">
             <ComponentCard title="Lista de Integrantes del Curso">
               
-              <EstudiantesPorCursoPage cursoGestion={parseInt(id)} />
+              <EstudiantesPorCursoPage cursoGestion={parseInt(id || "0")} />
             </ComponentCard>
             
           </div>
